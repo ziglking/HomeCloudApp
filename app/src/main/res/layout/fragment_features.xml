@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="30dp">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stretchColumns="*">
+
+        <TableRow
+            android:paddingTop="20dp">
+            <RelativeLayout>
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/alertor"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/alertor" />
+                <Switch
+                    android:id="@+id/switch_alertor"
+                    android:foreground="@color/colorPrimaryDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/alertor"
+                    android:layout_centerHorizontal="true"
+                    android:paddingTop="5dp"/>
+            </RelativeLayout>
+
+            <RelativeLayout>
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/light"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/light" />
+                <Switch
+                    android:id="@+id/switch_light"
+                    android:foreground="@color/colorPrimaryDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/light"
+                    android:layout_centerHorizontal="true"
+                    android:paddingTop="5dp"/>
+            </RelativeLayout>
+
+            <RelativeLayout>
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/thermometer"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/thermometer" />
+                <Switch
+                    android:id="@+id/switch_thermometer"
+                    android:foreground="@color/colorPrimaryDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/thermometer"
+                    android:layout_centerHorizontal="true"
+                    android:paddingTop="5dp"/>
+            </RelativeLayout>
+
+        </TableRow>
+    </TableLayout>
+</LinearLayout>

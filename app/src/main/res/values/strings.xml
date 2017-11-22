@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">HomeCloud</string>
+    <string name="login_common_mobile">请输入11位手机号</string>
+    <string name="login_common_pwd">请输入密码</string>
+    <string name="login_button">登录</string>
+    <string name="hint">还没有账号？注册</string>
+    <string name="rememberpwd">记住密码</string>
+    <string name="registeration">注册</string>
+    <string name="phone_number">手机号：</string>
+    <string name="new_pwd">新密码：</string>
+    <string name="new_pwd_agin">确认新密码：</string>
+    <string name="setting1">设置1</string>
+    <string name="setting2">设置2</string>
+    <string name="setting3">设置3</string>
+    <string name="indoor_temp">室内温度</string>
+    <string name="indoor_temp_num">25℃</string>
+    <string name="humidity">湿度xx|适宜</string>
+    <string name="recent_temp">近七日温度/湿度</string>
+    <string name="recent_excel_btn">点击查看趋势图</string>
+    <string name="me_info">个人信息展示面板</string>
+
+    <string name="login_mobile_hint">请输入11位手机号码</string>
+    <string name="login_pwd_too_long">密码不能超过20个字符</string>
+    <string name="login_pwd_too_short">密码不能低于6个字符</string>
+    <string name="login_username_empty">用户名称不能为空</string>
+    <string name="register_inconsistent_pwd">密码不一致</string>
+
+    <string name="neterror">网络错误</string>
+    <string name="jsonparseerror">JSON解析错误</string>
+
+    <string name="drawer_layout_open">Open</string>
+    <string name="drawer_layout_close">Close</string>
+    <string name="blog_site">Blog:http://blog.csdn.net/student9128</string>
+    <string name="nick_name">Kevin</string>
+    <string name="tips">Hello</string>
+    <string name="navigation_navigation_bar">NavigationBar</string>
+    <string name="navigation_radio_bar">RadioGroup</string>
+    <string name="navigation_tab_layout">TabLayout + ViewPager</string>
+    <string name="navigation_tab_layout2">TabLayout + ViewPager 2</string>
+    <string name="navigation_text_tab">TextView + LinearLayout</string>
+    <string name="navigation_tab_host">TabHost</string>
+
+    <string name="item_home">Home</string>
+    <string name="item_features">Features</string>
+    <string name="item_settings">Settings</string>
+    <string name="item_me">Me</string>
+
+    <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+</resources>
