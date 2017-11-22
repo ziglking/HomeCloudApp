@@ -23,6 +23,10 @@ public class RegisterActivity extends LoginBaseActivity implements View.OnClickL
 //    private EditText mEdtUsername;
     private EditText mEdtPwdConfirm;
 
+    public static void launch(Context context) {
+        Intent intent = new Intent(context, RegisterActivity.class);
+        context.startActivity(intent);
+    }
     public static void start(Context context) {
         Intent intent = new Intent();
         intent.setClass(context, RegisterActivity.class);

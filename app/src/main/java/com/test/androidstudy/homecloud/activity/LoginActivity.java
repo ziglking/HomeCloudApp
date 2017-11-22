@@ -1,5 +1,7 @@
 package com.test.androidstudy.homecloud.activity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -18,6 +20,10 @@ public class LoginActivity extends LoginBaseActivity implements View.OnClickList
     private EditText mEdtMobile;
     private EditText mEdtPwd;
 
+    public static void launch(Context context) {
+        Intent intent = new Intent(context, LoginActivity.class);
+        context.startActivity(intent);
+    }
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,7 +73,7 @@ public class LoginActivity extends LoginBaseActivity implements View.OnClickList
 //            }
 //            break;
             case R.id.txt_reg: {//点击注册需要跳转到注册activity，但是只有注册fragment
-//                ((EntranceActivity) getActivity()).switchRegisterFragment();
+                RegisterActivity.launch(this);
             }
             break;
         }

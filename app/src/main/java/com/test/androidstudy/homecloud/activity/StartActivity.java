@@ -31,7 +31,7 @@ public class StartActivity extends Activity implements View.OnClickListener {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_start);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        autoLogin();
+        //autoLogin();
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -40,14 +40,14 @@ public class StartActivity extends Activity implements View.OnClickListener {
         }, 2000);
     }
 
-    //判定是否可以登录
-    private void autoLogin(){
-        UserBean userBean  =   UserProfile.loadLocalUser();
-        if(userBean!=null&& !TextUtils.isEmpty(userBean.getToken())){
-            //只发请求，不关心结果
-            LoginAction.tokenLogin(userBean.getToken());
-        }
-    }
+    //判定并自动登录
+//    private void autoLogin(){
+//        UserBean userBean  =   UserProfile.loadLocalUser();
+//        if(userBean!=null&& !TextUtils.isEmpty(userBean.getToken())){
+//            //只发请求，不关心结果
+//            LoginAction.tokenLogin(userBean.getToken());
+//        }
+//    }
 
     private void chargeSharePreference() {
         SharedPreferences sp = getSharedPreferences(ExerciseConst.MAIN_PREFERENCE_FILE, Activity.MODE_PRIVATE);
@@ -63,16 +63,16 @@ public class StartActivity extends Activity implements View.OnClickListener {
     }
 
     private void initViewAndData() {
-        //还没有相应的资源文件
+        //还没有相应的资源文件,随意安放了几张图片
         ViewPager startViewPager = (ViewPager) findViewById(R.id.start_viewpager);
         ArrayList<View> views = new ArrayList<>();
         LayoutInflater inflater = getLayoutInflater();
         ImageView vpStart01 = new ImageView(this);
         vpStart01.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        //vpStart01.setImageResource(R.drawable.splash_01);
+        vpStart01.setImageResource(R.drawable.welcome1);
         ImageView vpStart02 = new ImageView(this);
         vpStart02.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        //vpStart02.setImageResource(R.drawable.splash_02);
+        vpStart02.setImageResource(R.drawable.welcome2);
         views.add(vpStart01);
         views.add(vpStart02);
         View vpStart03 = inflater.inflate(R.layout.viewpager_start, null);

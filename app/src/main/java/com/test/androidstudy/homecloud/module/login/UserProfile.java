@@ -26,6 +26,7 @@ public class UserProfile {
      * @return
      */
     public static UserBean loadLocalUser() {
+        //这个getContext函数取出的Context总是为空，很奇怪
         SharedPreferences sp = AppProfile.getContext().getSharedPreferences(USER_PREFERENCE_FILE, Context.MODE_PRIVATE);
         String jsonUser = sp.getString(SP_USER, null);
         if (!TextUtils.isEmpty(jsonUser)) {
