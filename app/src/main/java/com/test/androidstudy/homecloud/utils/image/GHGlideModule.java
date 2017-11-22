@@ -7,8 +7,8 @@ import com.bumptech.glide.GlideBuilder;
 import com.bumptech.glide.load.DecodeFormat;
 import com.bumptech.glide.load.engine.cache.InternalCacheDiskCacheFactory;
 import com.bumptech.glide.module.GlideModule;
-import com.netease.study.exercise.ExerciseConst;
-import com.netease.study.exercise.utils.DiskUtils;
+import com.test.androidstudy.homecloud.ExerciseConst;
+import com.test.androidstudy.homecloud.utils.DiskUtils;
 
 /**
  * Created by zyl06 on 9/4/16.

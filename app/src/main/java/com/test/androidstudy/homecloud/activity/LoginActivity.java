@@ -1,14 +1,11 @@
-package com.test.androidstudy.homecloud.fragment;
+package com.test.androidstudy.homecloud.activity;
 
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.EditText;
 
 import com.test.androidstudy.homecloud.R;
-import com.test.androidstudy.homecloud.activity.EntranceActivity;
 import com.test.androidstudy.homecloud.module.login.LoginAction;
 import com.test.androidstudy.homecloud.utils.PhoneNumberHelper;
 import com.test.androidstudy.homecloud.utils.ToastWrapper;
@@ -17,27 +14,21 @@ import com.sina.weibo.sdk.utils.MD5;
 /**
  * Created by zw on 16/10/29.
  */
-public class LoginFragment extends LoginBaseFragment implements View.OnClickListener {
-    private View mRootView;
+public class LoginActivity extends LoginBaseActivity implements View.OnClickListener {
     private EditText mEdtMobile;
     private EditText mEdtPwd;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mRootView = inflater.inflate(R.layout.fragment_login, container, false);
-        return mRootView;
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
+
+        mEdtMobile = (EditText) findViewById(R.id.edtLoginMobile);
+        mEdtPwd = (EditText) findViewById(R.id.edtLoginPwd);
+        findViewById(R.id.btn_login).setOnClickListener(this);
+        findViewById(R.id.txt_reg).setOnClickListener(this);
     }
 
-
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mEdtMobile = (EditText) mRootView.findViewById(R.id.edtLoginMobile);
-        mEdtPwd = (EditText) mRootView.findViewById(R.id.edtLoginPwd);
-        mRootView.findViewById(R.id.btn_login).setOnClickListener(this);
-        mRootView.findViewById(R.id.txtForgetPwd).setOnClickListener(this);
-        mRootView.findViewById(R.id.txtRegister).setOnClickListener(this);
-    }
 
 
     public void onClick(View view) {
@@ -71,14 +62,12 @@ public class LoginFragment extends LoginBaseFragment implements View.OnClickList
             }
 
             break;
-            case R.id.txtForgetPwd: {
-                ((EntranceActivity) getActivity()).switchRePwdFragment();
-            }
-            break;
-            case R.id.txtRegister: {
-                ((EntranceActivity) getActivity()).switchRegisterFragment();
-                ;
-
+//            case R.id.txtForgetPwd: {
+//                ((EntranceActivity) getActivity()).switchRePwdFragment();
+//            }
+//            break;
+            case R.id.txt_reg: {//点击注册需要跳转到注册activity，但是只有注册fragment
+//                ((EntranceActivity) getActivity()).switchRegisterFragment();
             }
             break;
         }

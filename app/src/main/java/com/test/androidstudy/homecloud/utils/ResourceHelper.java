@@ -5,7 +5,7 @@ import android.support.annotation.ColorRes;
 import android.support.annotation.DimenRes;
 import android.support.annotation.StringRes;
 
-import com.netease.study.exercise.AppProfile;
+import com.test.androidstudy.homecloud.AppProfile;
 
 /**
  * Created by zw on 16/10/28.

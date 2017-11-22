@@ -4,9 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 
-import com.netease.study.exercise.ExerciseConst;
-import com.netease.study.exercise.service.PollService;
-import com.xiaomi.mipush.sdk.MiPushClient;
+import com.test.androidstudy.homecloud.ExerciseConst;
+//import com.test.androidstudy.homecloud.service.PollService;
+//import com.xiaomi.mipush.sdk.MiPushClient;
 
 /**
  * Created by tangjie on 8/23/16.
@@ -20,14 +20,14 @@ public final class Background {
         return InstanceHolder.INSTANCE;
     }
 
-    public void poll(@NonNull Context context) {
-        Intent intent = new Intent(context, PollService.class);
-        context.startService(intent);
-    }
-
-    public void startMiPush(@NonNull Context context) {
-        MiPushClient.registerPush(context, ExerciseConst.MI_PUSH_APP_ID, ExerciseConst.MI_PUSH_APP_KEY);
-    }
+//    public void poll(@NonNull Context context) {
+//        Intent intent = new Intent(context, PollService.class);
+//        context.startService(intent);
+//    }
+//
+//    public void startMiPush(@NonNull Context context) {
+//        MiPushClient.registerPush(context, ExerciseConst.MI_PUSH_APP_ID, ExerciseConst.MI_PUSH_APP_KEY);
+//    }
 
     private Background() {}
 }

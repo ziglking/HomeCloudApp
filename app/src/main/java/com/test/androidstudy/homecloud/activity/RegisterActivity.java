@@ -1,12 +1,10 @@
-package com.test.androidstudy.homecloud.fragment;
+package com.test.androidstudy.homecloud.activity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.EditText;
 
 import com.test.androidstudy.homecloud.R;
@@ -19,33 +17,27 @@ import com.sina.weibo.sdk.utils.MD5;
  * Created by zw on 16/10/21.
  */
 
-public class RegisterFragment extends LoginBaseFragment implements View.OnClickListener {
+public class RegisterActivity extends LoginBaseActivity implements View.OnClickListener {
     private EditText mEdtMobile;
     private EditText mEdtPwd;
 //    private EditText mEdtUsername;
     private EditText mEdtPwdConfirm;
-    private View mRootView;
 
     public static void start(Context context) {
         Intent intent = new Intent();
-        intent.setClass(context, RegisterFragment.class);
+        intent.setClass(context, RegisterActivity.class);
         context.startActivity(intent);
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mRootView = inflater.inflate(R.layout.fragment_register, container, false);
-        return mRootView;
-    }
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_register);
 
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mEdtMobile = (EditText) mRootView.findViewById(R.id.edtRegisterPhoneNum);
-        mEdtPwd = (EditText) mRootView.findViewById(R.id.edtRegisterPwd);
-        //mEdtUsername = (EditText) mRootView.findViewById(R.id.edtRegisterUsername);
-        mEdtPwdConfirm = (EditText) mRootView.findViewById(R.id.edtPwdConfirm);
-        mRootView.findViewById(R.id.btn_register).setOnClickListener(this);
+        mEdtMobile = (EditText) findViewById(R.id.edtRegisterPhoneNum);
+        mEdtPwd = (EditText) findViewById(R.id.edtRegisterPwd);
+        mEdtPwdConfirm = (EditText) findViewById(R.id.edtPwdConfirm);
+        findViewById(R.id.btn_register).setOnClickListener(this);
     }
 
     @Override
@@ -90,6 +82,7 @@ public class RegisterFragment extends LoginBaseFragment implements View.OnClickL
                 return;
             }
 //            LoginAction.register(mobile, usrName, MD5.hexdigest(pwd), this);
+            //由于没有用户名，传入null
             LoginAction.register(mobile, null, MD5.hexdigest(pwd), this);
         }
     }

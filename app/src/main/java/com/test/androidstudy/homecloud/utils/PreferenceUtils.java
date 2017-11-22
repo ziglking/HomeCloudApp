@@ -3,8 +3,8 @@ package com.test.androidstudy.homecloud.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.netease.study.exercise.AppProfile;
-import com.netease.study.exercise.ExerciseConst;
+import com.test.androidstudy.homecloud.AppProfile;
+import com.test.androidstudy.homecloud.ExerciseConst;
 
 /**
  * Created by netease on 16/11/27.
