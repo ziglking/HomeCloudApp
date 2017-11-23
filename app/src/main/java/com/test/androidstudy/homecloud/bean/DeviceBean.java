@@ -1,11 +1,11 @@
 package com.test.androidstudy.homecloud.bean;
 
 public class DeviceBean {
-	protected String message;
-	protected boolean isReceive;
+    public String message;
+    public boolean isReceive;
 
-	public DeviceBean(String msg, boolean isReceive) {
-		this.message = msg;
-		this.isReceive = isReceive;
-	}
+    public DeviceBean(String msg, boolean isReceive) {
+        this.message = msg;
+        this.isReceive = isReceive;
+    }
 }
