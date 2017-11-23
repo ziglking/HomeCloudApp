@@ -11,6 +11,7 @@ import com.test.androidstudy.homecloud.R;
 import com.test.androidstudy.homecloud.module.login.LoginAction;
 import com.test.androidstudy.homecloud.utils.PhoneNumberHelper;
 import com.test.androidstudy.homecloud.utils.ToastWrapper;
+import com.test.androidstudy.homecloud.net.*;
 import com.sina.weibo.sdk.utils.MD5;
 
 /**
@@ -87,7 +88,8 @@ public class RegisterActivity extends LoginBaseActivity implements View.OnClickL
             }
 //            LoginAction.register(mobile, usrName, MD5.hexdigest(pwd), this);
             //由于没有用户名，传入null
-            LoginAction.register(mobile, null, MD5.hexdigest(pwd), this);
+            //LoginAction.register(mobile, "", MD5.hexdigest(pwd), this);
+            LoginAction.register(mobile, "", pwd, this);
         }
     }
 

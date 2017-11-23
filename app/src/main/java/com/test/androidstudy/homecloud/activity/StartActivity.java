@@ -31,7 +31,7 @@ public class StartActivity extends Activity implements View.OnClickListener {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_start);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        //autoLogin();
+        autoLogin();
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -41,13 +41,13 @@ public class StartActivity extends Activity implements View.OnClickListener {
     }
 
     //判定并自动登录
-//    private void autoLogin(){
-//        UserBean userBean  =   UserProfile.loadLocalUser();
-//        if(userBean!=null&& !TextUtils.isEmpty(userBean.getToken())){
-//            //只发请求，不关心结果
-//            LoginAction.tokenLogin(userBean.getToken());
-//        }
-//    }
+    private void autoLogin(){
+        UserBean userBean  =   UserProfile.loadLocalUser();
+        if(userBean!=null&& !TextUtils.isEmpty(userBean.getToken())){
+            //只发请求，不关心结果
+            LoginAction.tokenLogin(userBean.getToken());
+        }
+    }
 
     private void chargeSharePreference() {
         SharedPreferences sp = getSharedPreferences(ExerciseConst.MAIN_PREFERENCE_FILE, Activity.MODE_PRIVATE);

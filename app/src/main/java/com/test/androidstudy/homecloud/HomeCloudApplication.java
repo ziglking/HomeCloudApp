@@ -4,8 +4,6 @@ import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
 import android.os.Process;
-import android.support.annotation.Nullable;
-import android.util.Log;
 
 //import com.netease.hearttouch.htimagepicker.core.HTImagePicker;
 //import com.netease.hearttouch.htimagepicker.core.uiconfig.HTDefaultUIConfig;
@@ -15,20 +13,19 @@ import android.util.Log;
 //import com.netease.study.exercise.activity.imagepick.SingleImagePreviewActivity;
 //import com.netease.study.exercise.service.PollService;
 //import com.netease.study.exercise.utils.Background;
-import com.test.androidstudy.homecloud.utils.ThreadUtils;
 
 import java.util.List;
 
 /**
  * Created by netease on 16/8/7.
  */
-public class ExerciseApplication extends Application {
-    private static ExerciseApplication instance;
+public class HomeCloudApplication extends Application {
+    private static HomeCloudApplication instance;
     private static final int POLL_INTERVAL = 1 * 60 * 1000;
 
 //    private PollService.OnPollResultListener mListener;
 
-    public ExerciseApplication() {
+    public HomeCloudApplication() {
         instance = this;
     }
 
@@ -58,7 +55,7 @@ public class ExerciseApplication extends Application {
 //            mListener = new PollService.OnPollResultListener() {
 //                @Override
 //                public void onPollResult(@Nullable String result) {
-//                    Log.i(ExerciseApplication.class.getSimpleName(), "the poll result is " + result);
+//                    Log.i(HomeCloudApplication.class.getSimpleName(), "the poll result is " + result);
 //                    // 偷个懒,用handler意思一下.
 //                    ThreadUtils.runOnMainThreadDelay(new Runnable() {
 //                        @Override
