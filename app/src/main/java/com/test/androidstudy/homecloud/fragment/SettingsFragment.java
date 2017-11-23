@@ -1,5 +1,6 @@
 package com.test.androidstudy.homecloud.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -8,13 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.test.androidstudy.homecloud.R;
+import com.test.androidstudy.homecloud.activity.DeviceActivity;
 
 /**
  * Created by wangxiang on 2017/11/19.
  */
 
-public class SettingsFragment extends Fragment implements View.OnClickListener{
-    public static SettingsFragment newInstance(@Nullable String s){
+public class SettingsFragment extends Fragment implements View.OnClickListener {
+    public static SettingsFragment newInstance(@Nullable String s) {
         SettingsFragment settingsFragment = new SettingsFragment();
 //        Bundle bundle = new Bundle();
 //        bundle.putString(Constants.ARGS,s);
@@ -46,6 +48,18 @@ public class SettingsFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View view) {
         //TODO  具体有设置项待定
+        switch (view.getId()) {
+            case R.id.setting1:
+                chooseBluetooth();
+                break;
+        }
+    }
+
+    private void chooseBluetooth() {
+
+        Intent intent = new Intent(getContext(), DeviceActivity.class);
+        startActivity(intent);
+
     }
 
 }
