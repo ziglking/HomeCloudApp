@@ -28,7 +28,7 @@ import java.util.Set;
 
 import com.test.androidstudy.homecloud.R;
 import com.test.androidstudy.homecloud.adapter.DeviceListAdapter;
-import com.test.androidstudy.homecloud.bean.DeviceBean;
+import com.test.androidstudy.homecloud.bean.BluetoothDeviceBean;
 import com.test.androidstudy.homecloud.utils.bluetooth.BluetoothUtil;
 
 /**
@@ -37,7 +37,7 @@ import com.test.androidstudy.homecloud.utils.bluetooth.BluetoothUtil;
 public class DeviceActivity extends Activity {
     private ListView mListView;
     //数据
-    private ArrayList<DeviceBean> mDatas;
+    private ArrayList<BluetoothDeviceBean> mDatas;
     //    private Button mBtnSearch, mBtnService;
     private Button mBtnSearch;
     private DeviceListAdapter mAdapter;
@@ -61,7 +61,7 @@ public class DeviceActivity extends Activity {
 
 
     private void initDatas() {
-        mDatas = new ArrayList<DeviceBean>();
+        mDatas = new ArrayList<BluetoothDeviceBean>();
         mAdapter = new DeviceListAdapter(this, mDatas);
         mBtAdapter = BluetoothUtil.getAdapterInstance();
 
@@ -76,12 +76,12 @@ public class DeviceActivity extends Activity {
         Set<BluetoothDevice> deviceSet = mBtAdapter.getBondedDevices();
         if (deviceSet.size() > 0) {
             for (BluetoothDevice device : deviceSet) {
-                mDatas.add(new DeviceBean(device.getName() + "\n" + device.getAddress(), true));
+                mDatas.add(new BluetoothDeviceBean(device.getName() + "\n" + device.getAddress(), true));
                 mAdapter.notifyDataSetChanged();
                 mListView.setSelection(mDatas.size() - 1);
             }
         } else {
-            mDatas.add(new DeviceBean("没有配对的设备", true));
+            mDatas.add(new BluetoothDeviceBean("没有配对的设备", true));
             mAdapter.notifyDataSetChanged();
             mListView.setSelection(mDatas.size() - 1);
         }
@@ -125,11 +125,11 @@ public class DeviceActivity extends Activity {
                 }
 
                 if (msg.what == 1) {
-                    mDatas.add(new DeviceBean(info, true));
+                    mDatas.add(new BluetoothDeviceBean(info, true));
                     mAdapter.notifyDataSetChanged();
                     mListView.setSelection(mDatas.size() - 1);
                 } else {
-                    mDatas.add(new DeviceBean(info, false));
+                    mDatas.add(new BluetoothDeviceBean(info, false));
                     mAdapter.notifyDataSetChanged();
                     mListView.setSelection(mDatas.size() - 1);
                 }
@@ -168,7 +168,7 @@ public class DeviceActivity extends Activity {
     private OnItemClickListener mDeviceClickListener = new OnItemClickListener() {
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-            DeviceBean bean = mDatas.get(position);
+            BluetoothDeviceBean bean = mDatas.get(position);
             String info = bean.message;
             final String address = info.substring(info.length() - 17);
             // BluetoothActivity.BlueToothAddress = address;
@@ -220,7 +220,7 @@ public class DeviceActivity extends Activity {
                 BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
                 // 如果绑定的状态不一样
                 if (device.getBondState() != BluetoothDevice.BOND_BONDED) {
-                    mDatas.add(new DeviceBean(device.getName() + "\n" + device.getAddress(), false));
+                    mDatas.add(new BluetoothDeviceBean(device.getName() + "\n" + device.getAddress(), false));
                     mAdapter.notifyDataSetChanged();
                     mListView.setSelection(mDatas.size() - 1);
                 }
@@ -228,7 +228,7 @@ public class DeviceActivity extends Activity {
             } else if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(action)) {
                 setProgressBarIndeterminateVisibility(false);
                 if (mListView.getCount() == 0) {
-                    mDatas.add(new DeviceBean("没有发现蓝牙设备", false));
+                    mDatas.add(new BluetoothDeviceBean("没有发现蓝牙设备", false));
                     mAdapter.notifyDataSetChanged();
                     mListView.setSelection(mDatas.size() - 1);
                 }

@@ -1,9 +1,7 @@
 package com.test.androidstudy.homecloud;
 
 import android.content.Context;
-
 import com.test.androidstudy.homecloud.net.HttpClientWrapper;
-
 /**
  * Created by zw on 16/10/28.
  */

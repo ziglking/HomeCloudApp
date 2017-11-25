@@ -61,8 +61,11 @@ public class MeFragment extends Fragment  implements View.OnClickListener{
             case R.id.btn_login:
                 if(mButton.getText().equals("登录")){
                     LoginActivity.launch(getContext());
+                    if(UserProfile.isLogin()){
+                        mButton.setText("注销");
+                    }
                 }else {
-                    RegisterActivity.launch(getContext());
+                    //TODO log out
                 }
         }
     }

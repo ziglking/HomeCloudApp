@@ -6,7 +6,7 @@
 
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:stretchColumns="*">
 
         <TableRow
@@ -15,7 +15,7 @@
                 <ImageView
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:background="@drawable/alertor"
+                    android:background="@drawable/sound_equipment2"
                     android:layout_centerHorizontal="true"
                     android:id="@+id/alertor" />
                 <Switch
@@ -32,7 +32,7 @@
                 <ImageView
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:background="@drawable/light"
+                    android:background="@drawable/tv"
                     android:layout_centerHorizontal="true"
                     android:id="@+id/light" />
                 <Switch
@@ -49,7 +49,7 @@
                 <ImageView
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:background="@drawable/thermometer"
+                    android:background="@drawable/air_condition2"
                     android:layout_centerHorizontal="true"
                     android:id="@+id/thermometer" />
                 <Switch
@@ -63,5 +63,129 @@
             </RelativeLayout>
 
         </TableRow>
+
+        <TableRow
+            android:paddingTop="20dp">
+            <RelativeLayout>
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/air_condition2"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/alertor1" />
+                <Switch
+                    android:id="@+id/switch_alertor1"
+                    android:foreground="@color/colorPrimaryDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/alertor1"
+                    android:layout_centerHorizontal="true"
+                    android:paddingTop="5dp"/>
+            </RelativeLayout>
+
+            <RelativeLayout>
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/light2"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/light1" />
+                <Switch
+                    android:id="@+id/switch_light1"
+                    android:foreground="@color/colorPrimaryDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/light1"
+                    android:layout_centerHorizontal="true"
+                    android:paddingTop="5dp"/>
+            </RelativeLayout>
+
+            <RelativeLayout>
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/light2"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/thermometer1" />
+                <Switch
+                    android:id="@+id/switch_thermometer1"
+                    android:foreground="@color/colorPrimaryDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/thermometer1"
+                    android:layout_centerHorizontal="true"
+                    android:paddingTop="5dp"/>
+            </RelativeLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:paddingTop="20dp">
+            <RelativeLayout>
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/light2"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/alertor2" />
+                <Switch
+                    android:id="@+id/switch_alertor2"
+                    android:foreground="@color/colorPrimaryDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/alertor2"
+                    android:layout_centerHorizontal="true"
+                    android:paddingTop="5dp"/>
+            </RelativeLayout>
+
+            <RelativeLayout>
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/light2"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/light2" />
+                <Switch
+                    android:id="@+id/switch_light2"
+                    android:foreground="@color/colorPrimaryDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/light2"
+                    android:layout_centerHorizontal="true"
+                    android:paddingTop="5dp"/>
+            </RelativeLayout>
+
+            <RelativeLayout>
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/alertor2"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/thermometer2" />
+                <Switch
+                    android:id="@+id/switch_thermometer2"
+                    android:foreground="@color/colorPrimaryDark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/thermometer2"
+                    android:layout_centerHorizontal="true"
+                    android:paddingTop="5dp"/>
+            </RelativeLayout>
+
+        </TableRow>
+
+
     </TableLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom">
+        <Button
+            android:id="@+id/btn_refresh_devices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/refresh_devices"/>
+    </RelativeLayout>
+
 </LinearLayout>

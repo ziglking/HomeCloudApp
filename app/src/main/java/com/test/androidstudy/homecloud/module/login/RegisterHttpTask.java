@@ -1,12 +1,9 @@
 package com.test.androidstudy.homecloud.module.login;
 
 import android.support.annotation.NonNull;
-import android.text.TextUtils;
 
 import com.test.androidstudy.homecloud.bean.UserBean;
-import com.test.androidstudy.homecloud.net.FormRequest;
-import com.test.androidstudy.homecloud.net.HttpMethod;
-
+import com.test.androidstudy.homecloud.net.*;
 /**
  * Created by zw on 16/10/21.
  */

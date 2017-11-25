@@ -1,11 +1,21 @@
 package com.test.androidstudy.homecloud.bean;
 
-public class DeviceBean {
-    public String message;
-    public boolean isReceive;
+import java.io.Serializable;
 
-    public DeviceBean(String msg, boolean isReceive) {
-        this.message = msg;
-        this.isReceive = isReceive;
+/**
+ * Created by wangxiang on 2017/11/25.
+ */
+
+public class DeviceBean implements Serializable{
+    public int id;
+    public String name;
+    public int status;
+    public String updateTime;
+
+    public DeviceBean(int id, String name, int status, String updateTime) {
+        this.id = id;
+        this.name = name;
+        this.status = status;
+        this.updateTime = updateTime;
     }
 }

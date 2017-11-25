@@ -18,7 +18,9 @@
     <string name="humidity">湿度xx|适宜</string>
     <string name="recent_temp">近七日温度/湿度</string>
     <string name="recent_excel_btn">点击查看趋势图</string>
+    <string name="refresh_devices">刷新设备</string>
     <string name="me_info">个人信息展示面板</string>
+
 
     <string name="login_mobile_hint">请输入11位手机号码</string>
     <string name="login_pwd_too_long">密码不能超过20个字符</string>
@@ -29,6 +31,7 @@
     <string name="neterror">网络错误</string>
     <string name="jsonparseerror">JSON解析错误</string>
 
+    <string name="device_add_success">设备添加成功</string>
     <string name="drawer_layout_open">Open</string>
     <string name="drawer_layout_close">Close</string>
     <string name="blog_site">Blog:http://blog.csdn.net/student9128</string>

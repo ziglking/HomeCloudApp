@@ -9,7 +9,7 @@ import android.util.Log;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.test.androidstudy.homecloud.bean.DeviceBean;
+import com.test.androidstudy.homecloud.bean.DeviceListBean;
 import com.test.androidstudy.homecloud.adapter.DeviceListAdapter;
 
 import java.io.IOException;
@@ -141,7 +141,7 @@ public class BluetoothUtil {
     }
 
     public static void sendMessageHandle(String msg, Context context, ListView mListView,
-                                         ArrayList<DeviceBean> mDatas, DeviceListAdapter mAdapter) {
+                                         ArrayList<DeviceListBean> mDatas, DeviceListAdapter mAdapter) {
         if (mSocket == null) {
             Toast.makeText(context, "没有连接", Toast.LENGTH_SHORT).show();
             return;
@@ -150,7 +150,7 @@ public class BluetoothUtil {
             OutputStream os = mSocket.getOutputStream();
             os.write(msg.getBytes());
 
-            //mDatas.add(new DeviceBean(msg, false));
+            //mDatas.add(new DeviceListBean(msg, false));
             // mAdapter.notifyDataSetChanged();
             // mListView.setSelection(mDatas.size() - 1);
 

@@ -60,9 +60,11 @@ public abstract class BaseRequest<T> {
         if (HttpMethod.GET == getHttpMethod()) {
             String queryString = getQueryString();
             if (!TextUtils.isEmpty(queryString)) {
+                Log.i("urlget",String.format("%s%s?%s", getHost(), getApi(), queryString));
                 return String.format("%s%s?%s", getHost(), getApi(), queryString);
             }
         }
+        Log.i("urlother",String.format("%s%s", getHost(), getApi()));
         return String.format("%s%s", getHost(), getApi());
     }
 
@@ -118,13 +120,30 @@ public abstract class BaseRequest<T> {
 
     private HttpResponse<T> getResponse(ResponseBody body) throws IOException {
         String strBody = body.string();
+        Log.i("111111",strBody);
         JSONObject json = JSON.parseObject(strBody);
         HttpResponse<T> httpResponse = new HttpResponse<T>();
         httpResponse.code = json.getInteger("code");
-        httpResponse.message = json.getString("message");
+        httpResponse.message = json.getString("msg");
         String strData = json.getString("data");
-        Object data = JSONObject.parseObject(strData, getModelClass());
-        httpResponse.data = (T) data;
+        Log.i("111111",strData);
+        //这里data字段可能是json也可能不是
+        Object data = null;
+        try{
+            Log.i("notJson","data in body is not json22222");
+            data = JSONObject.parseObject(strData, getModelClass());
+        }catch(JSONException e){
+            e.printStackTrace();
+            Log.i("notJson","data in body is not json");
+        }finally {
+            if(data != null){
+                Log.i("Json","data in body is json");
+                httpResponse.data = (T)data;
+            }else {
+                Log.i("notJson","data in body is not json11111");
+                httpResponse.data = (T) strData;
+            }
+        }
         return httpResponse;
     }
 

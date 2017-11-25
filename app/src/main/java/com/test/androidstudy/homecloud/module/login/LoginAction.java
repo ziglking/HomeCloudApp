@@ -1,13 +1,12 @@
 package com.test.androidstudy.homecloud.module.login;
 
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.test.androidstudy.homecloud.AppProfile;
 import com.test.androidstudy.homecloud.bean.TokenBean;
 import com.test.androidstudy.homecloud.bean.UserBean;
-import com.test.androidstudy.homecloud.net.BaseRequest;
-import com.test.androidstudy.homecloud.net.HttpCallback;
-
+import com.test.androidstudy.homecloud.net.*;
 /**
  * Created by zw on 16/10/21.
  */
@@ -40,6 +39,7 @@ public class LoginAction {
                 if (bean != null) {
                     bean.setMobile(mobile);
                 }
+                Log.i("login response data",bean.toString());
                 UserProfile.setUser(bean);
                 if (cb != null) {
                     cb.onLoginSuccess(bean);
@@ -68,6 +68,7 @@ public class LoginAction {
             @Override
             public void onResponse(BaseRequest request, Object data) {
                 UserBean bean = (UserBean) data;
+                Log.i("register response data",bean.toString());
                 if (bean != null)
                     bean.setMobile(mobile);
                 UserProfile.setUser(bean);
@@ -94,6 +95,7 @@ public class LoginAction {
             @Override
             public void onResponse(BaseRequest request, Object data) {
                 TokenBean bean = (TokenBean) data;
+                Log.i("tokLogin response data",bean.toString());
                 UserProfile.updateTokenUser(bean);
             }
 

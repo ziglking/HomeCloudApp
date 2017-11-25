@@ -8,15 +8,15 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.test.androidstudy.homecloud.R;
-import com.test.androidstudy.homecloud.bean.DeviceBean;
+import com.test.androidstudy.homecloud.bean.BluetoothDeviceBean;
 
 import java.util.ArrayList;
 
 public class DeviceListAdapter extends BaseAdapter {
-    private ArrayList<DeviceBean> mDatas;
+    private ArrayList<BluetoothDeviceBean> mDatas;
     private LayoutInflater mInflater;
 
-    public DeviceListAdapter(Context context, ArrayList<DeviceBean> datas) {
+    public DeviceListAdapter(Context context, ArrayList<BluetoothDeviceBean> datas) {
         mDatas = datas;
         mInflater = LayoutInflater.from(context);
     }
@@ -39,7 +39,7 @@ public class DeviceListAdapter extends BaseAdapter {
 
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder = null;
-        DeviceBean item = mDatas.get(position);
+        BluetoothDeviceBean item = mDatas.get(position);
         if (convertView == null) {
             convertView = mInflater.inflate(R.layout.list_item, parent, false);
             viewHolder = new ViewHolder((View) convertView.findViewById(R.id.list_child),

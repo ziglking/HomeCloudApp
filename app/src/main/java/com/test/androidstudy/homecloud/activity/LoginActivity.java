@@ -4,11 +4,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
+import com.test.androidstudy.homecloud.AppProfile;
 import com.test.androidstudy.homecloud.R;
 import com.test.androidstudy.homecloud.module.login.LoginAction;
+import com.test.androidstudy.homecloud.module.login.UserProfile;
 import com.test.androidstudy.homecloud.utils.PhoneNumberHelper;
 import com.test.androidstudy.homecloud.utils.ToastWrapper;
 import com.sina.weibo.sdk.utils.MD5;
@@ -64,7 +67,20 @@ public class LoginActivity extends LoginBaseActivity implements View.OnClickList
                     return;
                 }
 
-                LoginAction.login(mobile, MD5.hexdigest(pwd), this);
+                //LoginAction.login(mobile, MD5.hexdigest(pwd), this);
+                Log.i("login", mobile+"  "+pwd);
+                LoginAction.login(mobile,pwd,this);
+                //一旦函数执行完毕，等待1秒判断是否已经登录，结束当前activity
+                try {
+                    Thread.sleep(1000);
+                    finish();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                //TODO 判断是否登录的函数暂时不管用
+                if(UserProfile.isLogin()){
+                    finish();
+                }
             }
 
             break;
@@ -77,6 +93,7 @@ public class LoginActivity extends LoginBaseActivity implements View.OnClickList
             }
             break;
         }
+
     }
 
 

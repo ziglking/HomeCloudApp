@@ -9,8 +9,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.test.androidstudy.homecloud.AppProfile;
 import com.test.androidstudy.homecloud.bean.TokenBean;
 import com.test.androidstudy.homecloud.bean.UserBean;
-import com.test.androidstudy.homecloud.net.HttpClientWrapper;
-
+import com.test.androidstudy.homecloud.net.*;
 /**
  * Created by zw on 16/10/23.
  */
@@ -26,7 +25,6 @@ public class UserProfile {
      * @return
      */
     public static UserBean loadLocalUser() {
-        //这个getContext函数取出的Context总是为空，很奇怪
         SharedPreferences sp = AppProfile.getContext().getSharedPreferences(USER_PREFERENCE_FILE, Context.MODE_PRIVATE);
         String jsonUser = sp.getString(SP_USER, null);
         if (!TextUtils.isEmpty(jsonUser)) {
