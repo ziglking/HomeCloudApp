@@ -7,6 +7,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,9 +37,12 @@ import com.test.androidstudy.homecloud.fragment.HomeFragment;
 import com.test.androidstudy.homecloud.fragment.FeaturesFragment;
 import com.test.androidstudy.homecloud.fragment.MeFragment;
 import com.test.androidstudy.homecloud.fragment.SettingsFragment;
+import com.test.androidstudy.homecloud.receiver.TagAliasOperatorHelper;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import cn.jpush.android.api.JPushInterface;
 
 /**
  * Created by Kevin on 2016/11/30.
@@ -67,6 +71,11 @@ public class MainActivity2 extends AppCompatActivity implements TabLayout.OnTabS
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        JPushInterface.setDebugMode(true);
+        JPushInterface.init(this);
+        //TODO ：无法接收推送
+        TagAliasOperatorHelper.sequence++;
+        JPushInterface.setAlias(this, TagAliasOperatorHelper.sequence, "18580282962");
 
         mViewPager = (ViewPager) findViewById(R.id.view_pager);
         mTabLayout = (TabLayout) findViewById(R.id.tab_layout);
